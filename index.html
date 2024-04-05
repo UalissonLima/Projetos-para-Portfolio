@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <div class="container-exercicio">
+            <label for="inExercicio">Nome Execercío:</label>
+            <input type="text" name="" id="inExercicio" required autofocus>
+        </div>
+        <div class="container-valores">
+            <label for="inQuilos">Quilos:</label>
+            <input type="number" name="" id="inQuilos" step="1" required>
+
+            <label for="inSeries">Series:</label>
+            <input type="number" name="" id="inSeries" step="1" required>
+
+            <label for="inRepeticoes">Repetições:</label>
+            <input type="number" name="" id="inRepeticoes" step="1" required>
+
+        </div>
+
+        <div class="container-dataEscolhida">
+            <input type="date" name="" id="inData" required> 
+        </div>
+
+        <div class="container-botoes">
+            <input type="submit" value="Registrar Exercicío">
+            <input type="button" value="Excluir" id="btnExcluir" disabled="true">
+            <input type="button" value="Editar" id="btnEditar" disabled="true">
+        </div>
+    </form>
+    <div class="container-central">
+        <div class="container-filtro">
+            <input type="date" name="" id="inDataSelecionada">
+        </div>
+
+        <div class="container-registros">
+        </div>
+    </div>
+
+    <script src="index.js">
+       
+    </script>
+</body>
+</html>

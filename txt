@@ -1,0 +1,54 @@
+
+
+        
+
+        
+
+        btnExcluir.addEventListener('click', () => {
+            const ckElemento = CtnRegistros.querySelectorAll('.container-faixa')[indices.editando]
+            CtnRegistros.removeChild(ckElemento)
+
+            const vetorNome = localStorage.getItem('Nome').split(';')
+            const vetorValores = localStorage.getItem('Valores').split(';')
+            const vetorData = localStorage.getItem('Data').split(';')
+
+            vetorNome.splice(indices.editando, 1)
+            vetorValores.splice(indices.editando, 1)
+            vetorData.splice(indices.editando, 1)
+
+            localStorage.removeItem('Nome')
+            localStorage.removeItem('Valores')
+            localStorage.removeItem('Data')
+
+            localStorage.setItem('Nome', vetorNome.join(';'))
+            localStorage.setItem('Valores', vetorValores.join(';'))
+            localStorage.setItem('Data', vetorData.join(';'))
+
+            frm.reset()
+            btnEditar.disabled = true
+            btnExcluir.disabled = true
+        })
+
+
+       
+
+        window.addEventListener('load', () => {
+            if(localStorage.getItem('Nome')){
+                const vetorNome = localStorage.getItem('Nome').split(';')
+                const vetorValores = localStorage.getItem('Valores').split(';')
+                const vetorDatas = localStorage.getItem('Data').split(';')
+
+                for(let i = 0; i < vetorNome.length; i++){
+                    vetorNome[i]
+                    const valoresSeparados = vetorValores[i].split(' ')
+
+                    criaElementoFaixa(vetorNome[i], valoresSeparados[0], valoresSeparados[2], valoresSeparados[4], vetorDatas[i])
+                }
+            }
+           
+            trocaData(dataChange)
+        })
+        
+        var dataChange
+
+        
